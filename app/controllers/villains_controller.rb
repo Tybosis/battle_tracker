@@ -63,13 +63,14 @@ class VillainsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_villain
-      @villain = Villain.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def villain_params
-      params.require(:villain).permit(:name, :weight, :height, :style, :special_moves)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_villain
+    @villain = Villain.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def villain_params
+    params.require(:villain).permit(:name, :weight, :height, :style, :special_moves)
+  end
 end

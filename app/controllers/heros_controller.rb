@@ -51,7 +51,7 @@ class HerosController < ApplicationController
       end
     end
   end
-
+r
   # DELETE /heros/1
   # DELETE /heros/1.json
   def destroy
@@ -63,13 +63,14 @@ class HerosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hero
-      @hero = Hero.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def hero_params
-      params.require(:hero).permit(:name, :weight, :height, :style, :special_moves)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hero
+    @hero = Hero.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def hero_params
+    params.require(:hero).permit(:name, :weight, :height, :style, :special_moves)
+  end
 end

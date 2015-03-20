@@ -65,14 +65,14 @@ class BattlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_battle
-      @battle = Battle.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def battle_params
-      params.require(:battle).permit(:location_id, :rounds, :time_limit, :hero_id, :villain_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_battle
+    @battle = Battle.find(params[:id])
+  end
 
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def battle_params
+    params.require(:battle).permit(:location_id, :rounds, :time_limit, :hero_id, :villain_id)
+  end
 end

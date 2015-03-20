@@ -9,8 +9,8 @@
 ryu = Hero.create!(name: 'Ryu', weight: 68, height: 175, style: 'Karate',
                    special_moves: 'Hadoken, Shoryuken, Tatsumaki Senpukyaku')
 
-guile = Hero.create!(name: 'Guile', weight: 86, height: 182, style: 'Pro wrestling',
-                     special_moves: 'Sonic Boom, Flash Kick')
+Hero.create!(name: 'Guile', weight: 86, height: 182, style: 'Pro wrestling',
+             special_moves: 'Sonic Boom, Flash Kick')
 
 chun_li = Hero.create!(name: 'Chun Li', weight: 55, height: 169, style: 'Kung Fu',
                        special_moves: 'Lightning Kick, Kikoken')
@@ -29,11 +29,11 @@ loc_2 = Location.create!(name: 'Kousyu Street')
 
 loc_3 = Location.create!(name: 'China')
 
-stage_1 = Battle.create!(hero_id: ryu.id, villain_id: sagat.id, location_id: loc_1.id, rounds: 5,
-                         time_limit: 99)
+Battle.create!(hero_id: ryu.id, villain_id: sagat.id, location_id: loc_1.id, rounds: 5,
+               time_limit: 99)
 
-stage_2 = Battle.create!(hero_id: ryu.id, villain_id: akuma.id, location_id: loc_2.id, rounds: 3,
-                         time_limit: 99)
+Battle.create!(hero_id: ryu.id, villain_id: akuma.id, location_id: loc_2.id, rounds: 3,
+               time_limit: 99)
 
-stage_3 = Battle.create!(hero_id: chun_li.id, villain_id: m_bison.id, location_id: loc_3.id, rounds: 3,
-                         time_limit: 999)
+Battle.create!(hero_id: chun_li.id, villain_id: m_bison.id, location_id: loc_3.id, rounds: 3,
+               time_limit: 999)
