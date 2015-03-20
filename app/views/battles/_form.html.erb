@@ -1,0 +1,37 @@
+<%= form_for(@battle) do |f| %>
+  <% if @battle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@battle.errors.count, "error") %> prohibited this battle from being saved:</h2>
+
+      <ul>
+      <% @battle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hero %>
+    <%= f.select(:hero_id, Hero.all.map{|h| [ h.name, h.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :villain %>
+    <%= f.select(:villain_id, Villain.all.map{|v| [ v.name, v.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.select(:location_id, Location.all.map{|l| [l.name, l.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :rounds %><br>
+    <%= f.number_field :rounds %>
+  </div>
+  <div class="field">
+    <%= f.label :time_limit %><br>
+    <%= f.number_field :time_limit %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

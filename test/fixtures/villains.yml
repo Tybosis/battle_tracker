@@ -1,0 +1,16 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  weight: 1
+  height: 1
+  style: MyString
+  special_moves: MyString
+
+two:
+  name: MyString
+  weight: 1
+  height: 1
+  style: MyString
+  special_moves: MyString
