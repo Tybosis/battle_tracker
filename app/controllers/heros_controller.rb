@@ -51,7 +51,7 @@ class HerosController < ApplicationController
       end
     end
   end
-r
+
   # DELETE /heros/1
   # DELETE /heros/1.json
   def destroy

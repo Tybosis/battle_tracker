@@ -28,7 +28,8 @@
 <p>
   <strong>Battles</strong>
   <% @battles.each do |battle| %>
-    <%= link_to battle.location, battle_path(battle) %>
+    <% @location = Location.find(battle.location_id) %>
+    <%= link_to "Location: #{@location.name}", battle_path(battle) %>
   <% end %>
 </p>
 
