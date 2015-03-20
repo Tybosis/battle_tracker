@@ -23,12 +23,17 @@ sagat = Villain.create!(name: 'Sagat', weight: 111, height: 226, style: 'Muay Th
 
 akuma = Villain.create!(name: 'Akuma', weight: 80, height: 178, style: 'Kung Fu',
                         special_moves: 'Gohadoken, Goshoryuken')
+loc_1 = Location.create!(name: 'Thailand')
 
-stage_1 = Battle.create!(hero_id: ryu.id, villain_id: sagat.id, location: 'Thailand', rounds: 5,
+loc_2 = Location.create!(name: 'Kousyu Street')
+
+loc_3 = Location.create!(name: 'China')
+
+stage_1 = Battle.create!(hero_id: ryu.id, villain_id: sagat.id, location_id: loc_1.id, rounds: 5,
                          time_limit: 99)
 
-stage_2 = Battle.create!(hero_id: ryu.id, villain_id: akuma.id, location: 'Kousyu Street', rounds: 3,
+stage_2 = Battle.create!(hero_id: ryu.id, villain_id: akuma.id, location_id: loc_2.id, rounds: 3,
                          time_limit: 99)
 
-stage_3 = Battle.create!(hero_id: chun_li.id, villain_id: m_bison.id, location: 'China', rounds: 3,
+stage_3 = Battle.create!(hero_id: chun_li.id, villain_id: m_bison.id, location_id: loc_3.id, rounds: 3,
                          time_limit: 999)

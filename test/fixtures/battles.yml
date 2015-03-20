@@ -1,0 +1,12 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location: MyString
+  rounds: 1
+  time_limit: 1
+
+two:
+  location: MyString
+  rounds: 1
+  time_limit: 1

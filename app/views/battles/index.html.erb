@@ -19,7 +19,8 @@
       <tr>
         <% @hero = Hero.find(battle.hero_id) %>
         <% @villain = Villain.find(battle.villain_id) %>
-        <td><%= battle.location %></td>
+        <% @location = Location.find(battle.location_id) %>
+        <td><%= @location.name %></td>
         <td><%= battle.rounds %></td>
         <td><%= battle.time_limit %></td>
         <td><%= link_to @hero.name, hero_path(@hero) %></td>
