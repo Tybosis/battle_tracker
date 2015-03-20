@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Battles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Rounds</th>
+      <th>Time limit</th>
+      <th>Hero</th>
+      <th>Villain</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @battles.each do |battle| %>
+      <tr>
+        <% @hero = Hero.find(battle.hero_id) %>
+        <% @villain = Villain.find(battle.villain_id) %>
+        <td><%= battle.location %></td>
+        <td><%= battle.rounds %></td>
+        <td><%= battle.time_limit %></td>
+        <td><%= link_to @hero.name, hero_path(@hero) %></td>
+        <td><%= link_to @villain.name, villain_path(@villain) %></td>
+        <td><%= link_to 'Show', battle %></td>
+        <td><%= link_to 'Edit', edit_battle_path(battle) %></td>
+        <td><%= link_to 'Destroy', battle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Battle', new_battle_path %>
+<%= link_to 'Heroes', heros_path %>
+<%= link_to 'Villains', villains_path %>

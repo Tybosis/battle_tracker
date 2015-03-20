@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @hero.name %></h1>
+<p>
+  <strong>Name:</strong>
+  <%= @hero.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= "#{@hero.weight} kg" %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= "#{@hero.height} cm" %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @hero.style %>
+</p>
+
+<p>
+  <strong>Special moves:</strong>
+  <%= @hero.special_moves %>
+</p>
+
+<p>
+  <strong>Battles</strong>
+  <% @battle.each do |battle| %>
+    <%= link_to battle.location, battle_path(battle) %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_hero_path(@hero) %> |
+<%= link_to 'Back', heros_path %> |
+<%= link_to 'Battles', battles_path %> |
+<%= link_to 'Villains', villains_path %>

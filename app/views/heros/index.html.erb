@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Heros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Style</th>
+      <th>Special moves</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heros.each do |hero| %>
+      <tr>
+        <td><%= hero.name %></td>
+        <td><%= "#{hero.weight} kg" %></td>
+        <td><%= "#{hero.height} cm" %></td>
+        <td><%= hero.style %></td>
+        <td><%= hero.special_moves %></td>
+        <td><%= link_to 'Show', hero %></td>
+        <td><%= link_to 'Edit', edit_hero_path(hero) %></td>
+        <td><%= link_to 'Destroy', hero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hero', new_hero_path %>
+<%= link_to 'Battles', battles_path %>
+<%= link_to 'Villains', villains_path %>

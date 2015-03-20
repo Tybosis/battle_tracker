@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1>Battle</h1>
+
+<p>
+  <strong>Location:</strong>
+  <%= @battle.location %>
+</p>
+
+<p>
+  <strong>Rounds:</strong>
+  <%= @battle.rounds %>
+</p>
+
+<p>
+  <strong>Time limit:</strong>
+  <%= @battle.time_limit %>
+</p>
+<br \>
+<h3>Opponents</h3>
+
+<p>
+  <strong>Hero:</strong>
+  <%= link_to @hero.name, hero_path(@hero) %>
+</p>
+
+<p>
+  <strong>Villain:</strong>
+  <%= link_to @villain.name, villain_path(@villain) %>
+</p>
+
+<%= link_to 'Edit', edit_battle_path(@battle) %> |
+<%= link_to 'Back', battles_path %>
+<%= link_to 'Heroes', heros_path %>
+<%= link_to 'Villains', villains_path %>
